@@ -1,6 +1,6 @@
 '*** Markdown formatter for Libre(open)Office ****
 '    (pre-alpha-demo)
-'    Author: Evgenii Maksimov jekamax@gmail.com
+'    Author: Jeka twoweeksgame@gmail.com
 '    License: No any warranties blah blah blah...
 '             Send me real postcard if you Like to use it 
 '
