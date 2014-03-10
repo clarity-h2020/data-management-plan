@@ -1,5 +1,5 @@
 '*** Markdown formatter for Libre(open)Office ****
-'    (pre-alpha-demo)
+'    (pre-alpha-demo) tested on LibreOffice 4.2
 '    Author: Evgenii Maksimov jekamax@gmail.com
 '    License: No any warranties blah blah blah...
 '             Send me real postcard if you Like to use it 
