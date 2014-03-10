@@ -1,8 +1,19 @@
 '*** Markdown formatter for Libre(open)Office ****
-'    (pre-alpha-demo) tested on LibreOffice 4.2
+'    (pre-alpha-demo)
 '    Author: Evgenii Maksimov jekamax@gmail.com
 '    License: No any warranties blah blah blah...
 '             Send me real postcard if you Like to use it 
+'
+' 	Features: format headers verbatim blocks and formulas 
+'             according to Markdown syntax
+'
+'  Installing: Open Tools->Macros->Organize Macros->LibreOffice Basic
+'              Click [New]
+'              In appeared field type OOMarkdown (or smth other no matter)
+'              After pressing [OK] the Basic editor appears. 
+'              Remove all existing content there and copy&paste this text.
+'              Save the macro. Now you can call it via "LibreOffice Basic" 
+'              menu or bind the hotkey. RTFM about macros.
 
 Option Explicit
 '*** Style names used for foratting ***
