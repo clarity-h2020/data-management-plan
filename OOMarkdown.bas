@@ -4,10 +4,10 @@
 '    License: No any warranties blah blah blah...
 '             Send me real postcard if you Like to use it 
 '
-' 	Features: format headers verbatim blocks and formulas 
+'    Features: format headers verbatim blocks and formulas 
 '             according to Markdown syntax
 '
-'  Installing: Open Tools->Macros->Organize Macros->LibreOffice Basic
+'    Install:  Open Tools->Macros->Organize Macros->LibreOffice Basic
 '              Click [New]
 '              In appeared field type OOMarkdown (or smth other no matter)
 '              After pressing [OK] the Basic editor appears. 
