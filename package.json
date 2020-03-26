@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node src/index.js"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/clarity-h2020/data-management-plan#readme",
   "devDependencies": {
-    "carbone": "^1.2.1"
+    "carbone": "^1.2.1",
+    "loglevel": "^1.6.7"
   }
 }

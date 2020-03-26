@@ -1,24 +1,34 @@
+'use strict';
+
 const fs = require('fs');
 const carbone = require('carbone');
+const log = require('loglevel');
 
-  // Data to inject
-  var data = {
-    firstname : 'John',
-    lastname : 'Doe'
-  };
 
-  // Generate a report using the sample template provided by carbone module
-  // This LibreOffice template contains "Hello {d.firstname} {d.lastname} !"
-  // Of course, you can create your own templates!
-  //carbone.render('./scr/carbone/examples/simple.odt', data, function(err, result){
-	carbone.render('./templates/clarity-deliverable-template.odt', data, function(err, result){
-	console.log('Generate a report using the sample template provided by carbone module');
-    if (err) {
-	  console.log(err);
-      return console.log(err);
+const datasetTemplate = './templates/dataset-template.odt';
+
+log.enableAll();
+
+processDataset('summer-days-sd');
+
+/**
+ * 
+ * @param {*} datasetId 
+ * @return {boolean} false on error
+ */
+function processDataset(datasetId) {
+  const inputFile = `./input/${datasetId}.json`;
+  const outputFile = `./output/${datasetId}.odt`;
+
+  log.debug(`processing '${inputFile}' using the Dataset Template '${datasetTemplate}'.`);
+  const inputData = JSON.parse(fs.readFileSync(inputFile));
+  
+  carbone.render(datasetTemplate, inputData, function (error, result) {
+    if (error) {
+      log.error(`Carbone could not process '${inputFile}'!`, error);
     } else {
-		console.log('Report successfully generated using the sample template provided by carbone module');
-	}
-    // write the result
-    fs.writeFileSync('output/result.odt', result);
+      fs.writeFileSync(outputFile, result);
+      log.info(`Dataset Report '${outputFile}' successfully generated.`);
+    }
   });
+};
