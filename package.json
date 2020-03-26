@@ -1,0 +1,26 @@
+{
+  "name": "data-management-plan",
+  "version": "0.0.0",
+  "description": "CLARITY Data Management Plan",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clarity-h2020/data-management-plan.git"
+  },
+  "keywords": [
+    "DMP"
+  ],
+  "author": "Pascal Dihé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clarity-h2020/data-management-plan/issues"
+  },
+  "homepage": "https://github.com/clarity-h2020/data-management-plan#readme",
+  "devDependencies": {
+    "carbone": "^1.2.1"
+  }
+}
