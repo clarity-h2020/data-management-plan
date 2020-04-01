@@ -122,3 +122,4 @@ dist
 *.wbk
 ~$*
 .~lock.*
+/input/*.json
