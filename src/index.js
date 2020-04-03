@@ -1,34 +1,17 @@
 'use strict';
 
-const fs = require('fs');
-const carbone = require('carbone');
+const reportGenerator = require('./reportGenerator');
 const log = require('loglevel');
-
-
-const datasetTemplate = './templates/dataset-template.odt';
 
 log.enableAll();
 
-processDataset('summer-days-sd');
-
-/**
- * 
- * @param {*} datasetId 
- * @return {boolean} false on error
- */
-function processDataset(datasetId) {
-  const inputFile = `./input/${datasetId}.json`;
-  const outputFile = `./output/${datasetId}.odt`;
-
-  log.debug(`processing '${inputFile}' using the Dataset Template '${datasetTemplate}'.`);
-  const inputData = JSON.parse(fs.readFileSync(inputFile));
-  
-  carbone.render(datasetTemplate, inputData, function (error, result) {
-    if (error) {
-      log.error(`Carbone could not process '${inputFile}'!`, error);
-    } else {
-      fs.writeFileSync(outputFile, result);
-      log.info(`Dataset Report '${outputFile}' successfully generated.`);
-    }
-  });
-};
+if (process.argv.length === 2) {
+  log.error('Expected argument(s) $datasetId and optional $templateName');
+  process.exit(1);
+} else if (process.argv.length === 4 && process.argv[2] && process.argv[3]) {
+  reportGenerator.generateReport(process.argv[2], process.argv[3]);
+} else if (process.argv.length === 3 && process.argv[2]) {
+  reportGenerator.generateReport(process.argv[2]);
+} else {
+  log.error(`Unexpected number of arguments: ${process.argv.length}`);
+}
