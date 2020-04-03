@@ -120,6 +120,7 @@ dist
 
 /output
 *.wbk
+*.doc?
 ~$*
 .~lock.*
 /input/*.json
