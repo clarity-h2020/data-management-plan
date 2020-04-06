@@ -18,7 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2.1
+    - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
@@ -29,6 +29,8 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        node --version
+
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
           zip --junk-paths my-artifact README.md
