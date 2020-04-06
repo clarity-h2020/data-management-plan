@@ -21,12 +21,12 @@ Private Const preformatted ="Preformatted Text"
 Private Const header ="Heading "
 
 Sub Main
-	replaceHeader
+'	replaceHeader
 	replaceBold
 	replaceBoldAlt
 	replaceItalic
-	replaceCode
-	replaceMath
+'	replaceCode
+'	replaceMath
 End Sub
 
 '*** Headers ***
@@ -94,7 +94,7 @@ End Sub
 ' Apply bold style to text between *.
 Sub replaceItalic
 	Dim search
- 	search=regSearch("\*[^*]+\*")
+ 	search=regSearch("\*[^ */]+\*")
  	Dim found
   	found = doc.findFirst(search)
   	While NOT IsNull(found)
@@ -180,3 +180,4 @@ End Function
 Function doc
 	doc = ThisComponent
 End Function
+
