@@ -22,6 +22,9 @@ Private Const header ="Heading "
 
 Sub Main
 	replaceHeader
+	replaceBold
+	replaceBoldAlt
+	replaceItalic
 	replaceCode
 	replaceMath
 End Sub
@@ -50,6 +53,57 @@ Sub replaceHeader
   		foundMark.setString("")
   		foundText.setString(hs)
   		foundMark = doc.findNext(foundText,searchMark)
+  	Wend 
+End Sub
+
+'*** bold text ***
+' Apply bold style to text between **.
+Sub replaceBold
+	Dim search
+ 	search=regSearch("\*\*[^*]+\*\*")
+ 	Dim found
+  	found = doc.findFirst(search)
+  	While NOT IsNull(found)
+  		Dim str
+  		str=found.getString()
+  		str=Mid(str,3,Len(str)-4) 'WTF again!
+  		found.CharWeight=com.sun.star.awt.FontWeight.BOLD
+  		found.setString(str)
+		found = doc.findNext(found,search)
+  	Wend 
+End Sub
+
+'*** bold text __ ***
+' Apply bold style to text between __.
+Sub replaceBoldAlt
+	Dim search
+ 	search=regSearch("__[^_]+__")
+ 	Dim found
+  	found = doc.findFirst(search)
+  	While NOT IsNull(found)
+  		Dim str
+  		str=found.getString()
+  		str=Mid(str,3,Len(str)-4) 'WTF again!
+  		found.CharWeight=com.sun.star.awt.FontWeight.BOLD
+  		found.setString(str)
+		found = doc.findNext(found,search)
+  	Wend 
+End Sub
+
+'*** italic text ***
+' Apply bold style to text between *.
+Sub replaceItalic
+	Dim search
+ 	search=regSearch("\*[^*]+\*")
+ 	Dim found
+  	found = doc.findFirst(search)
+  	While NOT IsNull(found)
+  		Dim str
+  		str=found.getString()
+  		str=Mid(str,2,Len(str)-2) 'WTF again!
+  		found.CharPosture=com.sun.star.awt.FontSlant.ITALIC
+  		found.setString(str)
+		found = doc.findNext(found,search)
   	Wend 
 End Sub
 
