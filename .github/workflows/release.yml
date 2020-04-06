@@ -55,9 +55,9 @@ jobs:
         draft: true
         prerelease: true
     - name: Download math result for job 1
-        uses: actions/download-artifact@v1
-        with:
-          name: build-artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: build-artifact
     - name: Upload Release Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
