@@ -118,7 +118,7 @@ dist
 
 # data management plan
 
-/output
+/output/*.odt
 *.wbk
 *.doc?
 ~$*

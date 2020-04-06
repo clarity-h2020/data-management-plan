@@ -29,7 +29,7 @@ jobs:
       run: npm install
 
     # Download JSON Export from CKAN
-    - name: Download JSON EXport fro CKAN
+    - name: Download JSON Export from CKAN
       run: |
         node --version
         ls -l
@@ -37,19 +37,19 @@ jobs:
         npm run download-groups
         npm run download-organizations
     # Generate Reports
-    - name: Download JSON EXport fro CKAN
+    - name: Generate ODT Reports from JSON
       run: |
         npm run process-groups
         npm run process-organizations
 
-    - name: Build project # This would actually build your project, using zip for an example artifact
+    - name: ZIP data-management-plan OTD files
       run: |
-          zip --junk-paths build-artifact README.md
-    - name: Upload build artifact
+          zip --junk-paths -r data-management-plan ./output/*
+    - name: Upload data-management-plan build artifact
       uses: actions/upload-artifact@v1
       with:
-        name: build-artifact
-        path: build-artifact.zip  
+        name: data-management-plan
+        path: data-management-plan.zip  
   release:   
     name: release
     needs: build
@@ -71,7 +71,7 @@ jobs:
     - name: Download math result for job 1
       uses: actions/download-artifact@v1
       with:
-        name: build-artifact
+        name: data-management-plan
     - name: Upload Release Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
@@ -79,6 +79,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./build-artifact/build-artifact.zip
-        asset_name: build-artifact.zip
+        asset_path: ./data-management-plan/data-management-plan.zip
+        asset_name: data-management-plan.zip
         asset_content_type: application/zip
