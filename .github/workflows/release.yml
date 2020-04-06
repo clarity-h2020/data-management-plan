@@ -33,6 +33,7 @@ jobs:
       run: |
         node --version
         ls -l
+        echo ${GITHUB_RUN_NUMBER}
         npm install
         npm run download-groups
         npm run download-organizations
@@ -91,3 +92,9 @@ jobs:
         asset_path: ./data-management-plan/data-management-plan.zip
         asset_name: data-management-plan.zip
         asset_content_type: application/zip
+    - name: Upload Assets to Release with a wildcard
+      uses: csexton/release-asset-action@v2
+      with:
+        pattern: "output/*"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        release-url: ${{ steps.create_release.outputs.upload_url }}
