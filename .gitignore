@@ -124,3 +124,4 @@ dist
 ~$*
 .~lock.*
 /input/*.json
+/.npmrc
