@@ -1,6 +1,8 @@
 # Data Management Plan
 
-![CI](https://github.com/clarity-h2020/data-management-plan/workflows/CI/badge.svg)
+![CI](https://github.com/clarity-h2020/data-management-plan/workflows/CI/badge.svg) ![DOI](https://zenodo.org/badge/250175656.svg)](https://zenodo.org/badge/latestdoi/250175656)
+
+
 
 Data Management Plan (DMP) of the CLARITY project, funded by the EU Horizon 2020 Programme under Grant Agreement number 730355. 
 
