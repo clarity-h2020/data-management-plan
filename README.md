@@ -1,6 +1,7 @@
 # Data Management Plan
 
-![CI](https://github.com/clarity-h2020/data-management-plan/workflows/CI/badge.svg) ![DOI](https://zenodo.org/badge/250175656.svg)](https://zenodo.org/badge/latestdoi/250175656)
+![CI](https://github.com/clarity-h2020/data-management-plan/workflows/CI/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3776164.svg)](https://doi.org/10.5281/zenodo.3776164)
+
 
 
 
