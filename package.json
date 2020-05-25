@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run-script download-groups && node src/index.js open-data-produced-by-clarity groups-template",
+    "start": "npm run-script download-groups && npm run-script process-groups",
     "download-groups": "bash input/groups.sh",
     "process-groups": "node src/index.js open-data-produced-by-clarity groups-template && node src/index.js non-open-data-produced-by-clarity groups-template && node src/index.js open-data-used-by-clarity groups-template && node src/index.js non-open-data-used-by-clarity groups-template",
     "download-organizations": "bash input/organizations.sh",
