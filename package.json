@@ -1,6 +1,6 @@
 {
   "name": "data-management-plan",
-  "version": "0.0.0",
+  "version": "0.5",
   "description": "CLARITY Data Management Plan",
   "main": "src/index.js",
   "scripts": {

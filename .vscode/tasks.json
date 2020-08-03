@@ -9,7 +9,9 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [],
+            "label": "npm: start"
         },
         {
             "type": "npm",
